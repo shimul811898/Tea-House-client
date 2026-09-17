@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+:root {
+  --font-primary: var(--font-geist-sans), system-ui, sans-serif;
+  --color-brand-primary: #ff5938;
+  --color-brand-orange: #ff7e36;
+  --color-brand-dark: #1e1e1e;
+  --color-brand-subtle: #777777;
+  --color-brand-bg-light: #fff5ee;
+  --color-brand-card: #f4f4f4;
+}
+
+body {
+  color: #1a1a1a;
+  background-color: #ffffff;
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+}
+
+/* Custom button gradient matching the uploaded Tea House design */
+.btn-gradient {
+  background: linear-gradient(135deg, #ff6b3d 0%, #ff4122 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #f05423 0%, #e03212 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(255, 65, 34, 0.4);
+}
+
+.bg-hero-gradient {
+  background: radial-gradient(circle at 80% 30%, rgba(255, 126, 54, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.bg-super-clients {
+  background: linear-gradient(108deg, #ff7a00 0%, #ff0144 100%);
+}
+
+/* Smooth glass effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdfaf6;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2d9cf;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5b8ab;
+}
