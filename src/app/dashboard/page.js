@@ -16,6 +16,7 @@ import {
   Shield,
   Edit2,
   Save,
+  Plus,
 } from 'lucide-react';
 
 export default function DashboardPage() {
@@ -155,6 +156,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
+          <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/sell"
               className="px-4 py-2.5 rounded-xl btn-gradient text-xs font-bold shadow-xs hover:shadow-md transition-all flex items-center gap-1.5"
@@ -347,6 +349,7 @@ export default function DashboardPage() {
                   </tbody>
                 </table>
               </div>
+            )}
           </div>
         )}
 

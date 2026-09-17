@@ -6,7 +6,12 @@ import NewsSection from '../components/NewsSection';
 
 async function getFeaturedProducts() {
   try {
-    const res = await fetch('http://localhost:5000/api/products?featured=true', {
+    const apiUrl =
+      process.env.SERVER_API_URL ||
+      process.env.NEXT_PUBLIC_API_URL ||
+      'http://localhost:5000';
+
+    const res = await fetch(`${apiUrl}/api/products?featured=true`, {
       cache: 'no-store',
     });
     if (!res.ok) return [];
