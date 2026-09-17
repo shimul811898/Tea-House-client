@@ -9,6 +9,19 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Logout handler
+  const logout = async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' }).catch(() => {});
+    } finally {
+      setUser(null);
+      setToken(null);
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('teahouse_token');
+      }
+    }
+  };
+
   // Load token and fetch current user profile on mount
   useEffect(() => {
     const savedToken = localStorage.getItem('teahouse_token');
@@ -110,17 +123,6 @@ export const AuthProvider = ({ children }) => {
       return { success: true, user: data.user, message: data.message };
     } catch (error) {
       return { success: false, message: error.message };
-    }
-  };
-
-  // Logout handler
-  const logout = async () => {
-    try {
-      await fetch('/api/auth/logout', { method: 'POST' }).catch(() => {});
-    } finally {
-      setUser(null);
-      setToken(null);
-      localStorage.removeItem('teahouse_token');
     }
   };
 
